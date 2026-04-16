@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-nav",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-14T02:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vyeptihcp.com/",
+    "originPage": "VYEPTI HCP homepage - navigation teaser cards",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "navigation",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + title + arrow link",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "icon-based navigation cards",
+      "section quick-links with icons",
+      "compact card grids with dark background"
+    ],
+    "notSuitableFor": [
+      "content-heavy cards with descriptions",
+      "cards with large images",
+      "light background card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index", "/content/efficacy-and-patient-outcomes"],
+    "reuseCount": 2,
+    "lastUsed": "2026-04-14T18:42:00.000Z"
+  }
+}

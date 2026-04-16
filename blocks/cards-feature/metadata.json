@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-14T02:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vyeptihcp.com/",
+    "originPage": "VYEPTI HCP homepage - featured content cards",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + heading + arrow CTA",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature highlight cards with icons",
+      "two-up content promotion cards",
+      "cards with heading and arrow CTAs on white background"
+    ],
+    "notSuitableFor": [
+      "cards with large photos",
+      "cards with descriptions and body text",
+      "dark background cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-14T02:24:00.000Z"
+  }
+}

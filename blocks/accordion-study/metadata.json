@@ -1,0 +1,38 @@
+{
+  "variantName": "accordion-study",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-04-14T18:44:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vyeptihcp.com/efficacy-and-patient-outcomes",
+    "originPage": "VYEPTI HCP efficacy page - study design accordion",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "study-design",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "title + expandable content with study design graphics and publication links",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "clinical study design sections",
+      "expandable detailed content sections",
+      "pharma data with publication links"
+    ],
+    "notSuitableFor": [
+      "FAQ sections with short answers",
+      "simple expand/collapse UI"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/efficacy-and-patient-outcomes"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-14T18:44:00.000Z"
+  }
+}

@@ -1,27 +1,221 @@
 {
   "templates": [
     {
-      "name": "Waters Home Page",
-      "urls": ["https://www.waters.com/nextgen/us/en.html"],
-      "description": "Main home page template with hero banner, feature cards, news links, product/application columns, shop section, purchasing steps, action cards, and customer testimonial.",
+      "name": "homepage",
+      "urls": [
+        "https://www.vyeptihcp.com/"
+      ],
+      "description": "Vyepta HCP homepage - main landing page for healthcare professionals",
       "blocks": [
         {
-          "name": "hero",
-          "instances": [".cmp-container__background-image + .cmp-container__wrapper"]
-        },
-        {
-          "name": "cards",
+          "name": "hero-pharma",
           "instances": [
-            ".layoutcontainer .feature-well",
-            ".cmp-links__item.primary a[href*='shop']",
-            "[class*='wotd'] .cmp-list"
+            ".hero-component"
           ]
         },
         {
-          "name": "columns",
+          "name": "cards-nav",
           "instances": [
-            ".products-and-services + .applications",
-            ".testimonial-video + .testimonial-quote"
+            ".teaser.narrow--teaser--trans.teaser-efficacy-patient, .teaser.narrow--teaser--trans.teaser-vyepti-patient, .teaser.narrow--teaser--trans.teaser-dosing-safety, .teaser.narrow--teaser--trans.teaser-access-vyepti"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            ".home-two-card-section .narrow--teaser--cta"
+          ]
+        },
+        {
+          "name": "columns-teaser",
+          "instances": [
+            ".home-image-content-wrapper-1",
+            ".coverage-finder-section-two",
+            ".home-image-content-wrapper-3"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "Hero Banner",
+          "selector": ".hero-component",
+          "style": null,
+          "blocks": [
+            "hero-pharma"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-nav-cards",
+          "name": "Navigation Teaser Cards",
+          "selector": ".hero-component .columncontainer:nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "cards-nav"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3-two-cards",
+          "name": "Featured Content Cards",
+          "selector": ".home-two-card-section",
+          "style": null,
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4-infusion-network",
+          "name": "Infusion Network Locator",
+          "selector": ".home-image-content-wrapper-1",
+          "style": null,
+          "blocks": [
+            "columns-teaser"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5-coverage-finder",
+          "name": "Coverage Finder",
+          "selector": ".coverage-finder-section-two",
+          "style": null,
+          "blocks": [
+            "columns-teaser"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6-copay-support",
+          "name": "Copay Support",
+          "selector": ".home-image-content-wrapper-3",
+          "style": null,
+          "blocks": [
+            "columns-teaser"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7-isi",
+          "name": "Important Safety Information",
+          "selector": "#SafetyPanelInfo",
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            "#SafetyPanelInfo .panel-heading",
+            "#SafetyPanelInfo #safetyInformationBody",
+            "#SafetyPanelInfo .indicationText"
+          ]
+        },
+        {
+          "id": "section-8-references",
+          "name": "References",
+          "selector": ".reference-section",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".reference-section p",
+            ".reference-section ol"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "efficacy-and-patient-outcomes",
+      "urls": [
+        "https://www.vyeptihcp.com/efficacy-and-patient-outcomes"
+      ],
+      "description": "Efficacy and patient outcomes page for VYEPTI HCP site - clinical data, study results, and patient-reported outcomes",
+      "blocks": [
+        {
+          "name": "hero-pharma",
+          "instances": [
+            ".herocomponent.banner-component .hero-component",
+            ".herocomponent.percentage-migraine-treated-graph .hero-component"
+          ]
+        },
+        {
+          "name": "cards-nav",
+          "instances": [
+            ".teaser.efficacy-banner-links"
+          ]
+        },
+        {
+          "name": "tabs-clinical",
+          "instances": [
+            ".tab.tabs.panelcontainer"
+          ]
+        },
+        {
+          "name": "accordion-study",
+          "instances": [
+            ".two-years-study-design"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "Hero Banner",
+          "selector": ".herocomponent.banner-component",
+          "style": null,
+          "blocks": [
+            "hero-pharma",
+            "cards-nav"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-stats-hero",
+          "name": "100% Migraine Freedom Stats",
+          "selector": ".herocomponent.percentage-migraine-treated-graph",
+          "style": null,
+          "blocks": [
+            "hero-pharma"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3-efficacy-tabs",
+          "name": "Efficacy Data Tabs",
+          "selector": ".tab.tabs.panelcontainer",
+          "style": null,
+          "blocks": [
+            "tabs-clinical"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4-2year-data",
+          "name": "2-Year Data",
+          "selector": ".two-years-study-design",
+          "style": null,
+          "blocks": [
+            "accordion-study"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5-isi",
+          "name": "Important Safety Information",
+          "selector": "#SafetyPanelInfo",
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            "#SafetyPanelInfo .panel-heading",
+            "#SafetyPanelInfo #safetyInformationBody",
+            "#SafetyPanelInfo .indicationText"
+          ]
+        },
+        {
+          "id": "section-6-references",
+          "name": "References",
+          "selector": ".reference-section",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".reference-section p",
+            ".reference-section ol"
           ]
         }
       ]

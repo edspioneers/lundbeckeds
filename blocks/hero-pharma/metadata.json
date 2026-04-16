@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-pharma",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-04-14T02:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vyeptihcp.com/",
+    "originPage": "VYEPTI HCP homepage - pharma migraine prevention",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "pharma-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background-image + headline text + footnote",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "pharmaceutical HCP pages",
+      "medical product landing pages",
+      "dark banner hero sections with background images"
+    ],
+    "notSuitableFor": [
+      "light background hero sections",
+      "hero sections with multiple CTAs",
+      "text-only hero sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index", "/content/efficacy-and-patient-outcomes"],
+    "reuseCount": 2,
+    "lastUsed": "2026-04-14T18:42:00.000Z"
+  }
+}

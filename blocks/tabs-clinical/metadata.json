@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-clinical",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-04-14T18:44:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vyeptihcp.com/efficacy-and-patient-outcomes",
+    "originPage": "VYEPTI HCP efficacy page - clinical data tabs",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "clinical-data",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "5 tabs + nested accordions with graphs and data tables",
+    "buttonCount": 0,
+    "imageCount": 10
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "clinical data pages with multiple study endpoints",
+      "tabbed content with nested accordions",
+      "pharma efficacy data presentations"
+    ],
+    "notSuitableFor": [
+      "simple tabbed content without nesting",
+      "tabs with only text content",
+      "product feature tabs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/efficacy-and-patient-outcomes"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-14T18:44:00.000Z"
+  }
+}

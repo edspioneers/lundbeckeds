@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-teaser",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-14T02:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vyeptihcp.com/",
+    "originPage": "VYEPTI HCP homepage - image+text teaser sections",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "teaser",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image column + text column with heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "image + text teaser sections",
+      "two-column layouts with CTA buttons",
+      "product/feature highlight sections with image and description"
+    ],
+    "notSuitableFor": [
+      "multi-column text-only layouts",
+      "three or more column layouts",
+      "comparison layouts without images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-14T02:24:00.000Z"
+  }
+}
