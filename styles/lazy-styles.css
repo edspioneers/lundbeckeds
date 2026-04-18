@@ -1,4 +1,4 @@
-/* stylelint-disable comment-empty-line-before */
+/* stylelint-disable comment-empty-line-before, no-descending-specificity */
 /* Vyepti.com Patient Site Overrides - Applied to pages under /vyepti/ path */
 
 body.vyepti-patient {
@@ -129,6 +129,103 @@ body.vyepti-patient main .section.dark {
 /* Patient site cards in default content */
 body.vyepti-patient main .section .default-content-wrapper img {
   border-radius: 8px;
+}
+
+/* Patient site header overrides */
+body.vyepti-patient header .nav-wrapper {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+body.vyepti-patient header nav {
+  color: #046183;
+}
+
+body.vyepti-patient header nav a:any-link {
+  color: #046183;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+body.vyepti-patient header nav a:any-link:hover {
+  color: #7ebcc6;
+}
+
+body.vyepti-patient header nav .nav-hamburger button {
+  color: #046183;
+}
+
+body.vyepti-patient header nav .nav-hamburger-icon,
+body.vyepti-patient header nav .nav-hamburger-icon::before,
+body.vyepti-patient header nav .nav-hamburger-icon::after {
+  background: #046183;
+}
+
+body.vyepti-patient header nav .nav-brand img {
+  filter: none;
+}
+
+body.vyepti-patient header nav .nav-tools a:any-link {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #046183;
+}
+
+/* Patient site dropdown styling */
+@media (width >= 900px) {
+  body.vyepti-patient header nav .nav-sections .nav-drop::after {
+    border-color: #046183;
+  }
+
+  body.vyepti-patient header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+    background-color: #fff;
+    border: 1px solid #e1f0f6;
+    box-shadow: 0 2px 15px -5px rgb(0 0 0 / 30%);
+  }
+
+  body.vyepti-patient header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
+    border-bottom-color: #fff;
+  }
+
+  body.vyepti-patient header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link {
+    color: #046183;
+    font-weight: 600;
+  }
+
+  body.vyepti-patient header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link:hover {
+    color: #7ebcc6;
+  }
+}
+
+/* Patient site footer overrides */
+body.vyepti-patient footer {
+  border-top: none;
+}
+
+body.vyepti-patient footer .footer > div {
+  padding-top: 40px;
+}
+
+body.vyepti-patient footer .footer p {
+  color: #484848;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body.vyepti-patient footer .footer a:any-link {
+  color: #046183;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+body.vyepti-patient footer .footer a:any-link:hover {
+  color: #7ebcc6;
+}
+
+body.vyepti-patient footer .footer strong {
+  color: #046183;
+  font-size: 18px;
 }
 
 @media (width >= 900px) {
