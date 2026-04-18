@@ -219,6 +219,53 @@
           ]
         }
       ]
+    },
+    {
+      "name": "content-page",
+      "urls": [
+        "https://www.vyeptihcp.com/real-vyepti-experience",
+        "https://www.vyeptihcp.com/safety-and-tolerability",
+        "https://www.vyeptihcp.com/infusion-locator",
+        "https://www.vyeptihcp.com/access-vyepti",
+        "https://www.vyeptihcp.com/coverage-finder",
+        "https://www.vyeptihcp.com/why-iv-infusion",
+        "https://www.vyeptihcp.com/dosing-and-administration",
+        "https://www.vyeptihcp.com/site-map",
+        "https://www.vyeptihcp.com/sign-up"
+      ],
+      "description": "Standard VYEPTI HCP content page with hero banner, main content, ISI, and references",
+      "blocks": [
+        {
+          "name": "hero-pharma",
+          "instances": [".hero-component"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "Hero Banner",
+          "selector": ".herocomponent.banner-component",
+          "style": null,
+          "blocks": ["hero-pharma"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-isi",
+          "name": "Important Safety Information",
+          "selector": "#SafetyPanelInfo",
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": ["#SafetyPanelInfo .panel-heading", "#SafetyPanelInfo #safetyInformationBody", "#SafetyPanelInfo .indicationText"]
+        },
+        {
+          "id": "section-3-references",
+          "name": "References",
+          "selector": ".reference-section",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".reference-section p", ".reference-section ol"]
+        }
+      ]
     }
   ]
 }
