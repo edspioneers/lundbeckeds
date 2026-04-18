@@ -266,6 +266,63 @@
           "defaultContent": [".reference-section p", ".reference-section ol"]
         }
       ]
+    },
+    {
+      "name": "vyepti-patient-page",
+      "urls": [
+        "https://www.vyepti.com/",
+        "https://www.vyepti.com/vyepti-study-results",
+        "https://www.vyepti.com/could-vyepti-be-right-for-you",
+        "https://www.vyepti.com/what-to-expect",
+        "https://www.vyepti.com/vyepti-side-effects",
+        "https://www.vyepti.com/downloadable-resources",
+        "https://www.vyepti.com/how-vyepti-works",
+        "https://www.vyepti.com/nurse-support",
+        "https://www.vyepti.com/stay-connected",
+        "https://www.vyepti.com/real-patient-stories",
+        "https://www.vyepti.com/financial-assistance",
+        "https://www.vyepti.com/share-your-migraine-story",
+        "https://www.vyepti.com/vyepti-insurance-coverage",
+        "https://www.vyepti.com/why-iv-treatment",
+        "https://www.vyepti.com/vyepti-faq",
+        "https://www.vyepti.com/site-map",
+        "https://www.vyepti.com/real-life-impact",
+        "https://www.vyepti.com/doctor-discussion-guide",
+        "https://www.vyepti.com/vyepti-locator"
+      ],
+      "description": "VYEPTI patient site pages - patient-facing content about migraine treatment",
+      "blocks": [
+        {
+          "name": "hero-patient",
+          "instances": [".cmp-teaser"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "Hero",
+          "selector": ".herocomponent",
+          "style": null,
+          "blocks": ["hero-patient"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-isi",
+          "name": "Important Safety Information",
+          "selector": "#SafetyPanelInfo",
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": ["#SafetyPanelInfo .panel-heading", "#SafetyPanelInfo #safetyInformationBody", "#SafetyPanelInfo .indicationText"]
+        },
+        {
+          "id": "section-3-references",
+          "name": "References",
+          "selector": ".reference-section",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".reference-section p", ".reference-section ol"]
+        }
+      ]
     }
   ]
 }

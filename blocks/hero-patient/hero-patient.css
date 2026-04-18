@@ -1,0 +1,89 @@
+/* Hero Patient - vyepti.com patient site hero */
+
+.hero-patient-container .hero-patient-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-patient {
+  position: relative;
+  padding: 40px 16px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-patient h1,
+.hero-patient h2,
+.hero-patient h3 {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  color: #046183;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 800;
+}
+
+.hero-patient h3 {
+  color: #c02c57;
+  font-size: 20px;
+}
+
+.hero-patient p {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+  font-family: proxima-nova, sans-serif;
+}
+
+.hero-patient a:any-link {
+  display: inline-block;
+  background-color: #c02c57;
+  color: #fff;
+  border: 1px solid #c02c57;
+  border-radius: 100px;
+  padding: 14px 32px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-patient a:any-link:hover {
+  background-color: #fff;
+  color: #c02c57;
+}
+
+.hero-patient .red-text {
+  color: #c02c57;
+}
+
+.hero-patient.no-image * {
+  color: var(--text-color);
+}
+
+.hero-patient picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero-patient img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (width >= 900px) {
+  .hero-patient {
+    padding: 80px 32px 60px;
+    min-height: 450px;
+  }
+
+  .hero-patient h1 {
+    font-size: 43px;
+  }
+}
