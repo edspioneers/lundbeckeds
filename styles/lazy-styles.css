@@ -132,6 +132,11 @@ body.vyepti-patient main .section .default-content-wrapper img {
 }
 
 /* Patient site header overrides */
+body.vyepti-patient header .nav-wrapper::before {
+  content: "For the preventive treatment of migraine in adults.";
+  background-color: #046183;
+}
+
 body.vyepti-patient header .nav-wrapper {
   background-color: #fff;
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
@@ -170,6 +175,12 @@ body.vyepti-patient header nav .nav-tools a:any-link {
   font-weight: 800;
   text-transform: uppercase;
   color: #046183;
+  border-color: #046183;
+}
+
+body.vyepti-patient header nav .nav-tools a:any-link:hover {
+  background-color: #046183;
+  color: #fff;
 }
 
 /* Patient site dropdown styling */
