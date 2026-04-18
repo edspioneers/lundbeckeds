@@ -1,1 +1,139 @@
-/* add global styles that can be loaded post LCP here */
+/* stylelint-disable comment-empty-line-before */
+/* Vyepti.com Patient Site Overrides - Applied to pages under /vyepti/ path */
+
+body.vyepti-patient {
+  font-family: proxima-nova, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Patient site headings */
+body.vyepti-patient h1 {
+  font-family: proxima-nova, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #046183;
+  line-height: 1.1;
+}
+
+body.vyepti-patient h2 {
+  font-family: proxima-nova, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #333;
+  line-height: 1.2;
+  padding-bottom: 16px;
+}
+
+body.vyepti-patient h3 {
+  font-family: proxima-nova, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #c02c57;
+  line-height: 1.3;
+}
+
+body.vyepti-patient h4 {
+  font-family: proxima-nova, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+body.vyepti-patient h5 {
+  font-family: proxima-nova, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #41748d;
+}
+
+/* Patient site links */
+body.vyepti-patient a:any-link {
+  color: #666;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+body.vyepti-patient a:hover {
+  color: #7ebcc6;
+  text-decoration: none;
+}
+
+/* Patient site primary button - coral */
+body.vyepti-patient a.button:any-link,
+body.vyepti-patient button.button {
+  font-family: proxima-nova, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #c02c57;
+  color: #fff;
+  border: 1px solid #c02c57;
+  border-radius: 100px;
+  padding: 19px 27px;
+  width: auto;
+  max-width: none;
+}
+
+body.vyepti-patient a.button:any-link:hover,
+body.vyepti-patient button.button:hover {
+  background-color: #9a2346;
+  border-color: #9a2346;
+  color: #fff;
+}
+
+/* Patient site secondary button - teal outline */
+body.vyepti-patient a.button.secondary:any-link,
+body.vyepti-patient button.button.secondary {
+  background-color: #fff;
+  color: #046183;
+  border: 2px solid #046183;
+}
+
+body.vyepti-patient a.button.secondary:any-link:hover,
+body.vyepti-patient button.button.secondary:hover {
+  border-color: #7ebcc6;
+  color: #7ebcc6;
+  background-color: #fff;
+}
+
+/* Patient site accent button - teal filled */
+body.vyepti-patient a.button.accent:any-link,
+body.vyepti-patient button.button.accent {
+  background-color: #046183;
+  color: #fff;
+  border: 1px solid #046183;
+  border-radius: 30px;
+}
+
+body.vyepti-patient a.button.accent:any-link:hover,
+body.vyepti-patient button.button.accent:hover {
+  background-color: #7ebcc6;
+  border-color: #7ebcc6;
+  color: #fff;
+}
+
+/* Patient site section variants */
+body.vyepti-patient main .section.light {
+  background-color: #e1f0f6;
+}
+
+body.vyepti-patient main .section.highlight {
+  background-color: #eff6f9;
+}
+
+body.vyepti-patient main .section.dark {
+  background-color: #046183;
+}
+
+/* Patient site cards in default content */
+body.vyepti-patient main .section .default-content-wrapper img {
+  border-radius: 8px;
+}
+
+@media (width >= 900px) {
+  body.vyepti-patient h1 {
+    font-size: 56px;
+    line-height: 1.07;
+  }
+}

@@ -14,20 +14,36 @@
   justify-content: center;
 }
 
-.hero-patient h1,
-.hero-patient h2,
-.hero-patient h3 {
+.hero-patient h1 {
   max-width: var(--max-content-width);
   margin-left: auto;
   margin-right: auto;
   color: #046183;
   font-family: proxima-nova, sans-serif;
   font-weight: 800;
+  font-size: 32px;
+  line-height: 1.1;
 }
 
 .hero-patient h3 {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
   color: #c02c57;
-  font-size: 20px;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.hero-patient h2 {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 800;
+  font-size: 24px;
 }
 
 .hero-patient p {
@@ -36,6 +52,8 @@
   margin-right: auto;
   color: #333;
   font-family: proxima-nova, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .hero-patient a:any-link {
@@ -44,19 +62,18 @@
   color: #fff;
   border: 1px solid #c02c57;
   border-radius: 100px;
-  padding: 14px 32px;
+  padding: 19px 27px;
+  font-family: proxima-nova, sans-serif;
   font-weight: 700;
+  font-size: 18px;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
 
 .hero-patient a:any-link:hover {
-  background-color: #fff;
-  color: #c02c57;
-}
-
-.hero-patient .red-text {
-  color: #c02c57;
+  background-color: #9a2346;
+  border-color: #9a2346;
+  color: #fff;
 }
 
 .hero-patient.no-image * {
@@ -84,6 +101,7 @@
   }
 
   .hero-patient h1 {
-    font-size: 43px;
+    font-size: 56px;
+    line-height: 1.07;
   }
 }

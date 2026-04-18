@@ -133,6 +133,12 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+
+  // Apply patient site theme for /vyepti/ pages
+  if (window.location.pathname.startsWith('/vyepti')) {
+    document.body.classList.add('vyepti-patient');
+  }
+
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
