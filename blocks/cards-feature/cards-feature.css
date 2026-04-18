@@ -1,27 +1,77 @@
+/* Cards Feature - Feature highlight cards with icons and arrow CTAs */
+
 .cards-feature > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
 .cards-feature > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cards-feature .cards-feature-card-body {
-  margin: 16px;
+.cards-feature > ul > li:hover {
+  border-color: var(--color-teal-hover);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
 
 .cards-feature .cards-feature-card-image {
+  flex: 0 0 64px;
   line-height: 0;
+  margin-right: 20px;
 }
 
-.cards-feature > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-feature .cards-feature-card-image img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.cards-feature .cards-feature-card-body {
+  flex: 1;
+}
+
+.cards-feature .cards-feature-card-body h4 {
+  margin: 0;
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  color: var(--color-teal);
+  line-height: 1.3;
+}
+
+.cards-feature .cards-feature-card-body h4 a {
+  color: var(--color-teal);
+  text-decoration: none;
+}
+
+.cards-feature .cards-feature-card-body h4 a:hover {
+  color: var(--color-teal-dark);
+}
+
+@media (width >= 900px) {
+  .cards-feature > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-feature .cards-feature-card-image {
+    flex: 0 0 80px;
+  }
+
+  .cards-feature .cards-feature-card-image img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cards-feature .cards-feature-card-body h4 {
+    font-size: var(--heading-font-size-m);
+  }
 }

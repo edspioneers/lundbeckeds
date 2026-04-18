@@ -1,3 +1,5 @@
+/* Hero Pharma - VYEPTI full-width dark hero with background image */
+
 .hero-pharma-container .hero-pharma-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,8 +7,11 @@
 
 .hero-pharma {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: 60px 24px 40px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-pharma h1,
@@ -14,12 +19,24 @@
 .hero-pharma h3,
 .hero-pharma h4,
 .hero-pharma h5,
-.hero-pharma h6,
-.hero-pharma p {
-  max-width: 1200px;
+.hero-pharma h6 {
+  max-width: var(--max-content-width);
   margin-left: auto;
   margin-right: auto;
-  color: var(--background-color);
+  color: var(--color-white);
+}
+
+.hero-pharma p {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-white);
+  font-size: var(--body-font-size-s);
+}
+
+.hero-pharma a:any-link {
+  color: var(--color-white);
+  text-decoration: underline;
 }
 
 .hero-pharma.no-image * {
@@ -42,6 +59,7 @@
 
 @media (width >= 900px) {
   .hero-pharma {
-    padding: 40px 32px;
+    padding: 80px 32px 60px;
+    min-height: 500px;
   }
 }

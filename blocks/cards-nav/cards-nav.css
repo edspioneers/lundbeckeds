@@ -1,27 +1,78 @@
+/* Cards Nav - Icon-based navigation cards with teal background */
+
 .cards-nav > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
 }
 
 .cards-nav > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  background-color: var(--color-teal);
+  border-right: 1px solid rgb(255 255 255 / 20%);
+  text-align: center;
+  transition: background-color 0.2s ease;
 }
 
-.cards-nav .cards-nav-card-body {
-  margin: 16px;
+.cards-nav > ul > li:hover {
+  background-color: var(--color-teal-dark);
+}
+
+.cards-nav > ul > li:last-child {
+  border-right: none;
 }
 
 .cards-nav .cards-nav-card-image {
+  padding: 20px 16px 8px;
   line-height: 0;
 }
 
-.cards-nav > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-nav .cards-nav-card-image img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.cards-nav .cards-nav-card-body {
+  padding: 0 16px 20px;
+}
+
+.cards-nav .cards-nav-card-body h5,
+.cards-nav .cards-nav-card-body p {
+  color: var(--color-white);
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.cards-nav .cards-nav-card-body a:any-link {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .cards-nav > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cards-nav .cards-nav-card-image {
+    padding: 24px 20px 12px;
+  }
+
+  .cards-nav .cards-nav-card-image img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .cards-nav .cards-nav-card-body {
+    padding: 0 20px 24px;
+  }
+
+  .cards-nav .cards-nav-card-body h5,
+  .cards-nav .cards-nav-card-body p {
+    font-size: var(--body-font-size-m);
+  }
 }

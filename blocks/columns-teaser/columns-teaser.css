@@ -1,3 +1,5 @@
+/* Columns Teaser - Two-column image+text layout with CTA */
+
 .columns-teaser > div {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,7 @@
 
 .columns-teaser img {
   width: 100%;
+  border-radius: 4px;
 }
 
 .columns-teaser > div > div {
@@ -13,21 +16,57 @@
 
 .columns-teaser > div > .columns-teaser-img-col {
   order: 0;
+  margin-bottom: var(--spacing-m);
 }
 
 .columns-teaser > div > .columns-teaser-img-col img {
   display: block;
 }
 
+.columns-teaser h2 {
+  color: var(--color-teal);
+  font-size: var(--heading-font-size-xl);
+  margin-top: 0;
+}
+
+.columns-teaser p {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.columns-teaser ul {
+  padding-left: 20px;
+}
+
+.columns-teaser li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.columns-teaser a.button:any-link {
+  margin-top: var(--spacing-s);
+}
+
+.columns-teaser em {
+  display: block;
+  font-size: var(--body-font-size-xs);
+  color: var(--color-medium-gray);
+  margin-top: 8px;
+}
+
 @media (width >= 900px) {
   .columns-teaser > div {
     align-items: center;
     flex-direction: unset;
-    gap: 24px;
+    gap: 40px;
   }
 
   .columns-teaser > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns-teaser > div > .columns-teaser-img-col {
+    margin-bottom: 0;
   }
 }
