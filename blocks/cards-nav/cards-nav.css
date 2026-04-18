@@ -1,5 +1,11 @@
 /* Cards Nav - Navigation cards on teal background */
 
+/* When cards-nav is in the same section as hero, remove section padding */
+.hero-pharma-container .cards-nav-wrapper {
+  padding: 0;
+  max-width: unset;
+}
+
 .cards-nav > ul {
   list-style: none;
   margin: 0;

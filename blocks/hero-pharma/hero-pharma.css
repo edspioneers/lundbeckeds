@@ -1,5 +1,11 @@
 /* Hero Pharma - Full-width dark hero with background image */
 
+/* Remove section padding when hero is in a section */
+.hero-pharma-container > div {
+  padding: 0;
+  max-width: unset;
+}
+
 .hero-pharma-container .hero-pharma-wrapper {
   max-width: unset;
   padding: 0;
