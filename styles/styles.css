@@ -7,33 +7,37 @@
   /* Brand Colors */
   --color-teal: #41748d;
   --color-teal-dark: #006186;
+  --color-teal-light: #7ebcc6;
   --color-coral: #c02c57;
-  --color-teal-light: #dfe9f1;
+  --color-coral-light: #f16464;
+  --color-powder-blue: #dfe9f1;
   --color-teal-pale: #eff6f9;
-  --color-teal-hover: #7ebcc6;
-  --color-coral-hover-bg: #f5e9ed;
+  --color-pink-light: #f5e9ed;
+  --color-lavender: #ececf6;
 
   /* Neutrals */
-  --color-body-text: #484848;
-  --color-dark-gray: #333;
-  --color-medium-gray: #666;
-  --color-light-gray: #f6f6f6;
-  --color-border: #ccc;
+  --color-body-text: #212529;
+  --color-secondary-text: #484848;
+  --color-tertiary-text: #666;
+  --color-border: #dee2e6;
+  --color-border-light: #e9ecef;
+  --color-muted: #a4a4a4;
+  --color-light-bg: #f8f9fa;
   --color-white: #fff;
   --color-black: #000;
 
   /* Semantic Colors */
   --background-color: var(--color-white);
-  --light-color: var(--color-light-gray);
+  --light-color: var(--color-light-bg);
   --dark-color: var(--color-teal-dark);
   --text-color: var(--color-body-text);
   --link-color: var(--color-teal);
-  --link-hover-color: var(--color-teal-dark);
+  --link-hover-color: var(--color-teal-light);
   --accent-color: var(--color-coral);
 
   /* Typography */
-  --body-font-family: open-sans, "Open Sans", sans-serif;
-  --heading-font-family: open-sans, "Open Sans", sans-serif;
+  --body-font-family: "open-sans", sans-serif;
+  --heading-font-family: "proxima-nova", "open-sans", sans-serif;
 
   /* Body Sizes */
   --body-font-size-m: 16px;
@@ -53,17 +57,24 @@
   --spacing-s: 16px;
   --spacing-m: 24px;
   --spacing-l: 40px;
-  --spacing-xl: 60px;
+  --spacing-xl: 56px;
+  --section-padding: 56px;
 
   /* Buttons */
   --button-border-radius: 100px;
   --button-transition: all 0.2s ease-in-out;
   --button-font-weight: 700;
-  --button-padding: 12px 28px;
-  --button-padding-sm: 8px 20px;
+  --button-padding: 14px 32px;
+  --button-max-width: 345px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgb(46 50 51 / 20%);
+  --shadow-dropdown: 0 2px 15px -5px rgb(0 0 0 / 50%);
+  --shadow-header: 2px 4px 15px -10px rgb(0 0 0 / 50%);
+  --shadow-inset: inset 0 0 8px 2px rgb(0 0 0 / 20%);
 
   /* Nav */
-  --nav-height: 120px;
+  --nav-height: 64px;
 
   /* Layout */
   --max-content-width: 1140px;
@@ -76,16 +87,23 @@
   src: local('Arial');
 }
 
+@font-face {
+  font-family: proxima-nova-fallback;
+  size-adjust: 98%;
+  src: local('Arial');
+}
+
 /* Desktop breakpoint */
 @media (width >= 900px) {
   :root {
-    --heading-font-size-xxl: 40px;
+    --heading-font-size-xxl: 43px;
     --heading-font-size-xl: 34px;
     --heading-font-size-l: 28px;
     --heading-font-size-m: 22px;
     --heading-font-size-s: 18px;
     --heading-font-size-xs: 16px;
-    --nav-height: 140px;
+    --nav-height: 80px;
+    --section-padding: 80px;
   }
 }
 
@@ -132,10 +150,19 @@ h6 {
   line-height: 1.25;
   scroll-margin: 40px;
   color: var(--color-teal);
+  letter-spacing: -0.2px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+  padding-bottom: 24px;
+}
+
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
@@ -188,7 +215,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Buttons */
+/* Buttons - Primary (coral filled) */
 p.button-wrapper {
   margin: 12px 0;
 }
@@ -199,7 +226,8 @@ button.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
+  max-width: var(--button-max-width);
+  width: 100%;
   margin: 0;
   border: 2px solid var(--accent-color);
   border-radius: var(--button-border-radius);
@@ -229,8 +257,8 @@ button.button:hover {
 
 a.button:any-link:focus-visible,
 button.button:focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
+  box-shadow: var(--shadow-card);
+  outline: 0;
 }
 
 a.button[aria-disabled="true"],
@@ -240,7 +268,7 @@ button.button:disabled {
   opacity: 0.5;
 }
 
-/* Primary button - coral filled */
+/* Primary button */
 a.button.primary,
 button.button.primary {
   border-color: var(--accent-color);
@@ -249,46 +277,38 @@ button.button.primary {
 }
 
 a.button.primary:hover,
-a.button.primary:focus-visible,
-button.button.primary:hover,
-button.button.primary:focus-visible {
+button.button.primary:hover {
   background-color: var(--color-white);
   color: var(--accent-color);
-  border-color: var(--accent-color);
 }
 
-/* Secondary button - outlined coral */
+/* Secondary button - outlined */
 a.button.secondary,
 button.button.secondary {
-  border-color: var(--accent-color);
-  background-color: transparent;
+  border: 0 solid;
+  background-color: var(--color-white);
   color: var(--accent-color);
 }
 
 a.button.secondary:hover,
-a.button.secondary:focus-visible,
-button.button.secondary:hover,
-button.button.secondary:focus-visible {
-  background-color: var(--color-coral-hover-bg);
+button.button.secondary:hover {
+  background-color: var(--color-pink-light);
   color: var(--accent-color);
-  border-color: var(--accent-color);
 }
 
-/* Accent button - teal */
+/* Accent button - outline on dark bg */
 a.button.accent,
 button.button.accent {
-  border-color: var(--color-teal);
-  background-color: var(--color-teal);
+  border: 1px solid var(--color-white);
+  background-color: transparent;
   color: var(--color-white);
 }
 
 a.button.accent:hover,
-a.button.accent:focus-visible,
-button.button.accent:hover,
-button.button.accent:focus-visible {
+button.button.accent:hover {
   background-color: var(--color-white);
   color: var(--color-teal);
-  border-color: var(--color-teal);
+  border-color: var(--color-white);
 }
 
 /* Images */
@@ -317,7 +337,7 @@ main > .section {
 main > .section > div {
   max-width: var(--max-content-width);
   margin: auto;
-  padding: var(--spacing-l) var(--spacing-s);
+  padding: var(--section-padding) var(--spacing-s);
 }
 
 main > .section:first-of-type {
@@ -330,7 +350,7 @@ main > .section:first-of-type > div {
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: var(--spacing-l) var(--spacing-m);
+    padding: var(--section-padding) var(--spacing-m);
   }
 }
 
@@ -343,16 +363,17 @@ main .section.highlight {
 }
 
 main .section.grey {
-  background-color: var(--color-light-gray);
+  background-color: var(--color-light-bg);
   margin: 0;
   padding: 0;
 }
 
 main .section.dark {
-  background-color: var(--color-teal-dark);
+  background-color: var(--color-teal);
   color: var(--color-white);
   margin: 0;
   padding: 0;
+  box-shadow: var(--shadow-inset);
 }
 
 main .section.dark h1,
@@ -369,13 +390,35 @@ main .section.dark a:any-link {
 }
 
 main .section.teal {
-  background-color: var(--color-teal-pale);
+  background-color: var(--color-powder-blue);
   margin: 0;
   padding: 0;
+  box-shadow: var(--shadow-inset);
 }
 
-/* Superscript styling for pharma references */
+/* Superscript for pharma references */
 sup {
   font-size: 0.65em;
   line-height: 0;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid var(--color-border);
+}
+
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid var(--color-border);
+  font-weight: 700;
+  color: var(--color-teal);
 }

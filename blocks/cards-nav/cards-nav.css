@@ -1,4 +1,4 @@
-/* Cards Nav - Icon-based navigation cards with teal background */
+/* Cards Nav - Navigation cards on teal background */
 
 .cards-nav > ul {
   list-style: none;
@@ -13,7 +13,7 @@
   background-color: var(--color-teal);
   border-right: 1px solid rgb(255 255 255 / 20%);
   text-align: center;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 .cards-nav > ul > li:hover {
