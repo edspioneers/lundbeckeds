@@ -1,4 +1,4 @@
 mountpoints:
   /:
-    url: https://content.da.live/edspioneers/aemcoderaiagent/
+    url: https://content.da.live/edspioneers/lundbeckeds/
     type: markup
