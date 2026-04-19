@@ -138,16 +138,27 @@ body.vyepti-patient main .section .default-content-wrapper img {
 /* Patient site header - 3-row layout matching vyepti.com production */
 
 /* Row 1: Teal indication bar with utility links */
-body.vyepti-patient header .nav-wrapper::before {
-  content: "For the preventive treatment of migraine in adults.";
-  display: block;
+body.vyepti-patient header .indication-bar {
   background-color: #046183;
-  color: #e1f0f6;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 10px 32px;
   font-family: proxima-nova, sans-serif;
+}
+
+body.vyepti-patient header .indication-bar .indication-text {
+  color: #e1f0f6;
   font-weight: 800;
   font-size: 16px;
-  padding: 10px 32px;
-  text-align: left;
+  margin-right: auto;
+}
+
+body.vyepti-patient header .indication-bar .indication-link {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 24px;
+  white-space: nowrap;
 }
 
 body.vyepti-patient header .nav-wrapper {
@@ -216,10 +227,7 @@ body.vyepti-patient header nav .nav-tools a:any-link:hover {
   color: #7ebcc6;
 }
 
-/* Hide the last 3 tools items (Patient Info, Prescribing Info, HCP Site) - they're in the teal bar via ::before */
-body.vyepti-patient header nav .nav-tools p:nth-child(n+4) {
-  display: none;
-}
+/* Last 3 tools items are moved to the indication bar by JS */
 
 /* Row 3: Main navigation bar - light blue background */
 @media (width >= 900px) {

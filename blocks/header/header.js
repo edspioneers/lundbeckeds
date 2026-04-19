@@ -167,6 +167,37 @@ export default async function decorate(block) {
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+
+  // Build indication bar above nav
+  const isPatientSite = window.location.pathname.startsWith('/vyepti');
+  const indicationBar = document.createElement('div');
+  indicationBar.className = 'indication-bar';
+
+  if (isPatientSite) {
+    indicationBar.innerHTML = '<span class="indication-text">For the preventive treatment of migraine in adults.</span>';
+    // Move last 3 tools items (Patient Info, Prescribing Info, HCP Site) into the bar
+    const navTools = nav.querySelector('.nav-tools');
+    if (navTools) {
+      const toolLinks = navTools.querySelectorAll('p');
+      const barLinks = document.createElement('div');
+      barLinks.className = 'indication-links';
+      toolLinks.forEach((p, i) => {
+        if (i >= 3) {
+          const link = p.querySelector('a');
+          if (link) {
+            link.className = 'indication-link';
+            barLinks.append(link);
+          }
+          p.remove();
+        }
+      });
+      indicationBar.append(barLinks);
+    }
+  } else {
+    indicationBar.innerHTML = '<span class="indication-text">VYEPTI is indicated for the preventive treatment of migraine in adults.</span>';
+  }
+
+  navWrapper.append(indicationBar);
   navWrapper.append(nav);
   block.append(navWrapper);
 }
