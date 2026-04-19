@@ -387,45 +387,37 @@ header nav .nav-tools {
 @media (width >= 900px) {
   header nav .nav-tools {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     align-items: center;
     order: 2;
     flex: 1;
     justify-content: flex-end;
+    flex-wrap: nowrap;
   }
 
   header nav .nav-tools p {
     margin: 0;
+    flex-shrink: 0;
   }
 
-  /* Request a rep - text link (2nd item, after PI dropdown) */
-  header nav .nav-tools p:nth-child(2) a:any-link {
-    font-size: 16px;
+  /* Request a rep - text link */
+  header nav .nav-tools p a:any-link {
+    font-size: 15px;
     font-weight: 700;
     color: var(--color-teal);
     text-decoration: none;
     white-space: nowrap;
-    background: none;
-    border: none;
-    padding: 0;
-    text-transform: none;
-    letter-spacing: 0;
   }
 
-  header nav .nav-tools p:nth-child(2) a:any-link:hover {
-    color: var(--color-teal-light);
-    background: none;
-  }
-
-  /* CHECK COVERAGE and INFUSION LOCATOR - dark teal filled buttons */
+  /* CHECK COVERAGE and INFUSION LOCATOR - outline pill buttons */
   header nav .nav-tools p:nth-child(n+3) a:any-link {
     display: inline-block;
-    padding: 10px 24px;
+    padding: 8px 20px;
     border: 2px solid var(--color-teal);
     border-radius: 100px;
-    background-color: var(--color-teal);
-    color: var(--color-white);
-    font-size: 14px;
+    background-color: transparent;
+    color: var(--color-teal);
+    font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -435,8 +427,7 @@ header nav .nav-tools {
   }
 
   header nav .nav-tools p:nth-child(n+3) a:any-link:hover {
-    background-color: var(--color-teal-dark);
-    border-color: var(--color-teal-dark);
+    background-color: var(--color-teal);
     color: var(--color-white);
   }
 
