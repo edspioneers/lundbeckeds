@@ -135,16 +135,19 @@ body.vyepti-patient main .section .default-content-wrapper img {
   border-radius: 8px;
 }
 
-/* Patient site header - 3-row layout matching vyepti.com */
+/* Patient site header - 3-row layout matching vyepti.com production */
 
-/* Row 1: Teal indication bar */
+/* Row 1: Teal indication bar with utility links */
 body.vyepti-patient header .nav-wrapper::before {
   content: "For the preventive treatment of migraine in adults.";
+  display: block;
   background-color: #046183;
   color: #e1f0f6;
+  font-family: proxima-nova, sans-serif;
   font-weight: 800;
   font-size: 16px;
-  padding: 10px 16px;
+  padding: 10px 32px;
+  text-align: left;
 }
 
 body.vyepti-patient header .nav-wrapper {
@@ -152,10 +155,12 @@ body.vyepti-patient header .nav-wrapper {
   box-shadow: none;
 }
 
-/* Row 2: Logo + utility links (brand + tools) */
+/* Row 2: Logo + utility icons */
 body.vyepti-patient header nav {
   color: #046183;
   flex-wrap: wrap;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 body.vyepti-patient header nav a:any-link {
@@ -178,24 +183,32 @@ body.vyepti-patient header nav .nav-hamburger-icon::after {
   background: #046183;
 }
 
-body.vyepti-patient header nav .nav-brand img {
-  filter: none;
-  width: 180px;
+body.vyepti-patient header nav .nav-brand {
+  flex-basis: 200px;
 }
 
-/* Utility links row - SIGN UP, INFUSION LOCATOR, SAVINGS */
+body.vyepti-patient header nav .nav-brand img {
+  filter: none;
+  width: 200px;
+}
+
+/* Tools section - first 3 links visible as utility icons, rest hidden (in teal bar) */
 body.vyepti-patient header nav .nav-tools {
-  gap: 24px;
+  gap: 28px;
+  flex-wrap: wrap;
 }
 
 body.vyepti-patient header nav .nav-tools a:any-link {
-  font-size: 16px;
+  font-family: proxima-nova, sans-serif;
+  font-size: 20px;
   font-weight: 800;
   text-transform: uppercase;
   color: #046183;
   border: none;
   padding: 0;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  border-radius: 0;
+  white-space: nowrap;
 }
 
 body.vyepti-patient header nav .nav-tools a:any-link:hover {
@@ -203,24 +216,35 @@ body.vyepti-patient header nav .nav-tools a:any-link:hover {
   color: #7ebcc6;
 }
 
-/* Row 3: Main navigation - light blue background */
+/* Hide the last 3 tools items (Patient Info, Prescribing Info, HCP Site) - they're in the teal bar via ::before */
+body.vyepti-patient header nav .nav-tools p:nth-child(n+4) {
+  display: none;
+}
+
+/* Row 3: Main navigation bar - light blue background */
 @media (width >= 900px) {
+  body.vyepti-patient header nav {
+    position: relative;
+  }
+
   body.vyepti-patient header nav .nav-sections {
     flex-basis: 100%;
     order: 3;
     background-color: #e1f0f6;
     margin: 0 -32px;
     padding: 0 32px;
+    border-top: 1px solid rgb(4 97 131 / 10%);
   }
 
   body.vyepti-patient header nav .nav-sections ul {
     justify-content: center;
-    gap: 32px;
-    padding: 12px 0;
+    gap: 28px;
+    padding: 14px 0;
   }
 
   body.vyepti-patient header nav .nav-sections ul > li > a,
   body.vyepti-patient header nav .nav-sections .nav-drop {
+    font-family: proxima-nova, sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: #046183;
@@ -244,6 +268,7 @@ body.vyepti-patient header nav .nav-tools a:any-link:hover {
   body.vyepti-patient header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link {
     color: #046183;
     font-weight: 600;
+    font-size: 14px;
   }
 
   body.vyepti-patient header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link:hover {
