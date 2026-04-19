@@ -174,24 +174,47 @@ export default async function decorate(block) {
   indicationBar.className = 'indication-bar';
 
   if (isPatientSite) {
-    indicationBar.innerHTML = '<span class="indication-text">For the preventive treatment of migraine in adults.</span>';
-    // Move last 3 tools items (Patient Info, Prescribing Info, HCP Site) into the bar
+    const piBase = 'https://www.lundbeck.com/content/dam/lundbeck-com/americas/united-states/products/neurology';
+    indicationBar.innerHTML = `<span class="indication-text">For the preventive treatment of migraine in adults.</span>
+      <div class="indication-links">
+        <div class="indication-dropdown">
+          <button class="indication-link" type="button">Patient Information <span class="indication-chevron"></span></button>
+          <div class="indication-dropdown-menu">
+            <a href="${piBase}/vyepti_ppi_us_en.pdf">Patient Information</a>
+            <a href="${piBase}/vyepti_ppi_us_es.pdf">Información del Paciente</a>
+          </div>
+        </div>
+        <div class="indication-dropdown">
+          <button class="indication-link" type="button">Prescribing Information <span class="indication-chevron"></span></button>
+          <div class="indication-dropdown-menu">
+            <a href="${piBase}/vyepti_pi_us_en.pdf">Prescribing Information</a>
+            <a href="${piBase}/vyepti_pi_us_es.pdf">Información de Prescripción</a>
+          </div>
+        </div>
+        <a class="indication-link" href="https://www.vyeptihcp.com">Healthcare Provider Site</a>
+      </div>`;
+
+    // Add dropdown toggle behavior
+    indicationBar.querySelectorAll('.indication-dropdown button').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdown = btn.closest('.indication-dropdown');
+        const wasOpen = dropdown.classList.contains('open');
+        indicationBar.querySelectorAll('.indication-dropdown.open').forEach((d) => d.classList.remove('open'));
+        if (!wasOpen) dropdown.classList.add('open');
+      });
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', () => {
+      indicationBar.querySelectorAll('.indication-dropdown.open').forEach((d) => d.classList.remove('open'));
+    });
+
+    // Remove the last 3 tools items since they're now in the bar
     const navTools = nav.querySelector('.nav-tools');
     if (navTools) {
       const toolLinks = navTools.querySelectorAll('p');
-      const barLinks = document.createElement('div');
-      barLinks.className = 'indication-links';
-      toolLinks.forEach((p, i) => {
-        if (i >= 3) {
-          const link = p.querySelector('a');
-          if (link) {
-            link.className = 'indication-link';
-            barLinks.append(link);
-          }
-          p.remove();
-        }
-      });
-      indicationBar.append(barLinks);
+      toolLinks.forEach((p, i) => { if (i >= 3) p.remove(); });
     }
   } else {
     indicationBar.innerHTML = '<span class="indication-text">VYEPTI is indicated for the preventive treatment of migraine in adults.</span>';

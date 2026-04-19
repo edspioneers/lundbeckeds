@@ -157,8 +157,16 @@ body.vyepti-patient header .indication-bar .indication-link {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  margin-left: 24px;
-  white-space: nowrap;
+}
+
+body.vyepti-patient header .indication-bar .indication-dropdown-menu a {
+  color: #046183;
+  font-size: 14px;
+}
+
+body.vyepti-patient header .indication-bar .indication-dropdown-menu a:hover {
+  color: #7ebcc6;
+  background-color: #eff6f9;
 }
 
 body.vyepti-patient header .nav-wrapper {
