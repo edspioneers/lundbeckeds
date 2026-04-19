@@ -130,9 +130,54 @@ body.vyepti-patient main .section.dark {
   background-color: #046183;
 }
 
-/* Patient site cards in default content */
+/* Patient site phone CTA strip */
+body.vyepti-patient main > .section:nth-child(2) {
+  background-color: #e1f0f6;
+  padding: 0;
+}
+
+body.vyepti-patient main > .section:nth-child(2) > div {
+  padding: 16px;
+  text-align: center;
+}
+
+body.vyepti-patient main > .section:nth-child(2) p {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+body.vyepti-patient main > .section:nth-child(2) a:any-link {
+  color: #046183;
+  text-decoration: none;
+}
+
+/* Patient site content links styled as ghost buttons */
+body.vyepti-patient main .button.secondary {
+  background-color: #fff;
+  color: #046183;
+  border: 2px solid #046183;
+  border-radius: 100px;
+  padding: 19px 27px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+body.vyepti-patient main .button.secondary:hover {
+  border-color: #7ebcc6;
+  color: #7ebcc6;
+  background-color: #fff;
+}
+
+/* Patient site images */
 body.vyepti-patient main .section .default-content-wrapper img {
   border-radius: 8px;
+}
+
+/* Patient site em text (used for coral emphasis) */
+body.vyepti-patient .hero-patient em {
+  color: #c02c57;
+  font-style: normal;
 }
 
 /* Patient site header - 3-row layout matching vyepti.com production */
