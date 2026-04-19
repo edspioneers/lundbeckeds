@@ -225,7 +225,10 @@ export default async function decorate(block) {
       toolLinks.forEach((p, i) => { if (i >= 3) p.remove(); });
     }
   } else {
-    indicationBar.innerHTML = '<span class="indication-text">VYEPTI is indicated for the preventive treatment of migraine in adults.</span>';
+    indicationBar.innerHTML = `<span class="indication-text">VYEPTI is indicated for the preventive treatment of migraine in adults.</span>
+      <div class="indication-links">
+        <a class="indication-link" href="https://www.vyepti.com">View patient site</a>
+      </div>`;
   }
 
   navWrapper.append(indicationBar);

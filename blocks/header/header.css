@@ -317,25 +317,31 @@ header nav .nav-sections ul > li > ul > li {
     align-items: center;
     gap: 8px;
     height: auto;
-    padding: 8px 16px;
-    background-color: var(--color-teal);
+    padding: 10px 24px;
+    background-color: var(--accent-color);
     color: var(--color-white);
-    border-radius: 4px;
+    border-radius: 100px;
     font-weight: 700;
-    font-size: var(--body-font-size-s);
+    font-size: 16px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  header nav .nav-hamburger button:hover {
+    background-color: #9a2346;
   }
 
   header nav .nav-hamburger button::after {
-    content: 'MENU';
+    content: 'MENU  \25BE';
     font-family: var(--body-font-family);
     font-weight: 700;
+    letter-spacing: 0.5px;
   }
 
-  header nav[aria-expanded='false'] .nav-hamburger-icon,
-  header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-  header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-    background: var(--color-white);
+  header nav .nav-hamburger-icon,
+  header nav .nav-hamburger-icon::before,
+  header nav .nav-hamburger-icon::after {
+    display: none;
   }
 
   header nav[aria-expanded='true'] .nav-sections {
@@ -344,73 +350,81 @@ header nav .nav-sections ul > li > ul > li {
     position: absolute;
     right: 32px;
     top: 100%;
-    width: 300px;
+    width: 320px;
     background-color: var(--color-white);
     box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
     border-radius: 8px;
-    padding: 16px;
+    padding: 16px 24px;
     z-index: 20;
+  }
+
+  /* Submenu items in MENU dropdown */
+  header nav[aria-expanded='true'] .nav-sections .nav-drop > ul {
+    padding-left: 16px;
+    margin: 4px 0 0;
+    display: block;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections .nav-drop > ul > li {
+    border-bottom: none;
+    padding: 4px 0;
+    font-size: 14px;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections .nav-drop > ul > li a:any-link {
+    color: var(--color-teal-light);
+    font-weight: 400;
+    font-size: 14px;
   }
 }
 
-/* tools - HCP utility links */
+/* tools - between logo and MENU button */
 header nav .nav-tools {
   grid-area: tools;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-header nav .nav-tools p {
-  margin: 0;
-}
-
-header nav .nav-tools a:any-link {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-teal);
-  text-decoration: none;
-  white-space: nowrap;
+  display: none;
 }
 
 @media (width >= 900px) {
   header nav .nav-tools {
-    gap: 4px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
     order: 2;
     flex: 1;
+    justify-content: flex-end;
   }
 
   header nav .nav-tools p {
-    display: flex;
+    margin: 0;
   }
 
-  /* Separator between text links */
-  header nav .nav-tools p:nth-child(-n+3)::after {
-    content: "|";
-    margin: 0 4px;
-    color: var(--color-border);
-    font-weight: 400;
+  /* Prescribing Info and Request a rep - text links */
+  header nav .nav-tools p:nth-child(-n+2) a:any-link {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-teal);
+    text-decoration: none;
+    white-space: nowrap;
   }
 
-  header nav .nav-tools p:nth-child(3)::after {
-    content: "";
-    margin: 0 8px;
-  }
-
-  /* Style Check Coverage and Infusion Locator as pill buttons */
-  header nav .nav-tools p:nth-child(n+4) a:any-link {
-    padding: 6px 14px;
-    border: 1px solid var(--accent-color);
+  /* CHECK COVERAGE and INFUSION LOCATOR - outline buttons */
+  header nav .nav-tools p:nth-child(n+3) a:any-link {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 2px solid var(--color-teal);
     border-radius: 100px;
-    color: var(--accent-color);
-    font-size: 12px;
+    color: var(--color-teal);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    white-space: nowrap;
     transition: all 0.2s ease-in-out;
   }
 
-  header nav .nav-tools p:nth-child(n+4) a:any-link:hover {
-    background-color: var(--accent-color);
+  header nav .nav-tools p:nth-child(n+3) a:any-link:hover {
+    background-color: var(--color-teal);
     color: var(--color-white);
   }
 }
