@@ -235,34 +235,31 @@ export default async function decorate(block) {
         <a class="indication-link" href="https://www.vyepti.com">View patient site</a>
       </div>`;
 
-    // Convert "Prescribing Information" text link into a dropdown in the tools section
-    const navTools = nav.querySelector('.nav-tools');
-    if (navTools) {
-      const piBase = 'https://www.lundbeck.com/content/dam/lundbeck-com/americas/united-states/products/neurology';
-      // Find the first <p> containing a link with "Prescribing" text
-      const allToolPs = navTools.querySelectorAll('p');
-      let firstTool = null;
-      allToolPs.forEach((p) => {
-        const a = p.querySelector('a');
-        if (a && a.textContent.includes('Prescribing') && !firstTool) firstTool = p;
-      });
-      if (firstTool) {
-        const piDropdown = document.createElement('div');
-        piDropdown.className = 'pi-dropdown';
-        piDropdown.innerHTML = `<button class="pi-dropdown-toggle" type="button">Prescribing Information <span class="pi-chevron"></span></button>
+    // Convert "Prescribing Information" text link into a dropdown
+    // Search entire nav for the PI link (may be in tools or any section)
+    const piBase = 'https://www.lundbeck.com/content/dam/lundbeck-com/americas/united-states/products/neurology';
+    let firstTool = null;
+    nav.querySelectorAll('a').forEach((a) => {
+      if (a.textContent.trim() === 'Prescribing Information' && !firstTool) {
+        firstTool = a.closest('p') || a.parentElement;
+      }
+    });
+    if (firstTool) {
+      const piDropdown = document.createElement('div');
+      piDropdown.className = 'pi-dropdown';
+      piDropdown.innerHTML = `<button class="pi-dropdown-toggle" type="button">Prescribing Information <span class="pi-chevron"></span></button>
           <div class="pi-dropdown-menu">
             <a href="${piBase}/vyepti_pi_us_en.pdf">Prescribing Information</a>
             <a href="${piBase}/vyepti_ppi_us_en.pdf">Patient Information</a>
             <a href="${piBase}/vyepti_pi_us_es.pdf">Información de Prescripción</a>
             <a href="${piBase}/vyepti_ppi_us_es.pdf">Información del Paciente</a>
           </div>`;
-        piDropdown.querySelector('button').addEventListener('click', (e) => {
-          e.stopPropagation();
-          piDropdown.classList.toggle('open');
-        });
-        document.addEventListener('click', () => piDropdown.classList.remove('open'));
-        firstTool.replaceWith(piDropdown);
-      }
+      piDropdown.querySelector('button').addEventListener('click', (e) => {
+        e.stopPropagation();
+        piDropdown.classList.toggle('open');
+      });
+      document.addEventListener('click', () => piDropdown.classList.remove('open'));
+      firstTool.replaceWith(piDropdown);
     }
   }
 
