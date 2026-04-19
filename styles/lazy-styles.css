@@ -8,6 +8,10 @@ body.vyepti-patient {
   color: #333;
 }
 
+body.vyepti-patient header {
+  height: 160px;
+}
+
 /* Patient site headings */
 body.vyepti-patient h1 {
   font-family: proxima-nova, sans-serif;
@@ -131,19 +135,27 @@ body.vyepti-patient main .section .default-content-wrapper img {
   border-radius: 8px;
 }
 
-/* Patient site header overrides */
+/* Patient site header - 3-row layout matching vyepti.com */
+
+/* Row 1: Teal indication bar */
 body.vyepti-patient header .nav-wrapper::before {
   content: "For the preventive treatment of migraine in adults.";
   background-color: #046183;
+  color: #e1f0f6;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 10px 16px;
 }
 
 body.vyepti-patient header .nav-wrapper {
   background-color: #fff;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  box-shadow: none;
 }
 
+/* Row 2: Logo + utility links (brand + tools) */
 body.vyepti-patient header nav {
   color: #046183;
+  flex-wrap: wrap;
 }
 
 body.vyepti-patient header nav a:any-link {
@@ -168,23 +180,52 @@ body.vyepti-patient header nav .nav-hamburger-icon::after {
 
 body.vyepti-patient header nav .nav-brand img {
   filter: none;
+  width: 180px;
+}
+
+/* Utility links row - SIGN UP, INFUSION LOCATOR, SAVINGS */
+body.vyepti-patient header nav .nav-tools {
+  gap: 24px;
 }
 
 body.vyepti-patient header nav .nav-tools a:any-link {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   text-transform: uppercase;
   color: #046183;
-  border-color: #046183;
+  border: none;
+  padding: 0;
+  letter-spacing: 0.5px;
 }
 
 body.vyepti-patient header nav .nav-tools a:any-link:hover {
-  background-color: #046183;
-  color: #fff;
+  background-color: transparent;
+  color: #7ebcc6;
 }
 
-/* Patient site dropdown styling */
+/* Row 3: Main navigation - light blue background */
 @media (width >= 900px) {
+  body.vyepti-patient header nav .nav-sections {
+    flex-basis: 100%;
+    order: 3;
+    background-color: #e1f0f6;
+    margin: 0 -32px;
+    padding: 0 32px;
+  }
+
+  body.vyepti-patient header nav .nav-sections ul {
+    justify-content: center;
+    gap: 32px;
+    padding: 12px 0;
+  }
+
+  body.vyepti-patient header nav .nav-sections ul > li > a,
+  body.vyepti-patient header nav .nav-sections .nav-drop {
+    font-size: 16px;
+    font-weight: 600;
+    color: #046183;
+  }
+
   body.vyepti-patient header nav .nav-sections .nav-drop::after {
     border-color: #046183;
   }
@@ -193,6 +234,7 @@ body.vyepti-patient header nav .nav-tools a:any-link:hover {
     background-color: #fff;
     border: 1px solid #e1f0f6;
     box-shadow: 0 2px 15px -5px rgb(0 0 0 / 30%);
+    top: 130%;
   }
 
   body.vyepti-patient header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
