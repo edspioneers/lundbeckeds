@@ -353,41 +353,59 @@ header nav .nav-sections ul > li > ul > li {
   }
 }
 
-/* tools - HCP utility links in the ribbon */
+/* tools - HCP utility links */
 header nav .nav-tools {
   grid-area: tools;
-  display: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header nav .nav-tools p {
+  margin: 0;
+}
+
+header nav .nav-tools a:any-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-teal);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 @media (width >= 900px) {
   header nav .nav-tools {
-    display: flex;
-    gap: 16px;
-    align-items: center;
+    gap: 4px;
     order: 2;
     flex: 1;
-    justify-content: flex-end;
   }
 
   header nav .nav-tools p {
-    margin: 0;
+    display: flex;
   }
 
-  header nav .nav-tools a:any-link {
-    font-size: var(--body-font-size-xs);
-    font-weight: 700;
-    color: var(--color-teal);
-    text-decoration: none;
-    white-space: nowrap;
+  /* Separator between text links */
+  header nav .nav-tools p:nth-child(-n+3)::after {
+    content: "|";
+    margin: 0 4px;
+    color: var(--color-border);
+    font-weight: 400;
+  }
+
+  header nav .nav-tools p:nth-child(3)::after {
+    content: "";
+    margin: 0 8px;
   }
 
   /* Style Check Coverage and Infusion Locator as pill buttons */
   header nav .nav-tools p:nth-child(n+4) a:any-link {
-    padding: 6px 16px;
+    padding: 6px 14px;
     border: 1px solid var(--accent-color);
     border-radius: 100px;
     color: var(--accent-color);
-    font-size: var(--body-font-size-xs);
+    font-size: 12px;
     transition: all 0.2s ease-in-out;
   }
 

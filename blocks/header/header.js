@@ -161,9 +161,17 @@ export default async function decorate(block) {
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
-  // prevent mobile nav behavior on window resize
-  toggleMenu(nav, navSections, isDesktop.matches);
-  isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
+  // For HCP site: keep menu collapsed on desktop (MENU button toggles it)
+  // For patient site: expand on desktop (horizontal nav bar)
+  const isPatientNav = window.location.pathname.startsWith('/vyepti');
+  if (isPatientNav) {
+    toggleMenu(nav, navSections, isDesktop.matches);
+    isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
+  } else {
+    // HCP: always start collapsed, toggle on click only
+    toggleMenu(nav, navSections, false);
+    isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, false));
+  }
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
