@@ -238,7 +238,13 @@ export default async function decorate(block) {
     const navTools = nav.querySelector('.nav-tools');
     if (navTools) {
       const piBase = 'https://www.lundbeck.com/content/dam/lundbeck-com/americas/united-states/products/neurology';
-      const firstTool = navTools.querySelector('p:first-child');
+      // Find the first <p> containing a link with "Prescribing" text
+      const allToolPs = navTools.querySelectorAll('p');
+      let firstTool = null;
+      allToolPs.forEach((p) => {
+        const a = p.querySelector('a');
+        if (a && a.textContent.includes('Prescribing') && !firstTool) firstTool = p;
+      });
       if (firstTool) {
         const piDropdown = document.createElement('div');
         piDropdown.className = 'pi-dropdown';
