@@ -1,15 +1,14 @@
 /* stylelint-disable no-descending-specificity, comment-empty-line-before */
-/* VYEPTI HCP Header */
+/* VYEPTI HCP Header - Teal ribbon + logo + MENU layout */
 
 header .nav-wrapper {
   background-color: var(--color-white);
   width: 100%;
   z-index: 18;
   position: fixed;
-  box-shadow: var(--shadow-header);
 }
 
-/* Indication bar above nav */
+/* Indication bar */
 header .indication-bar {
   display: flex;
   align-items: center;
@@ -63,7 +62,7 @@ header .indication-bar .indication-chevron {
   top: -1px;
 }
 
-/* Dropdown menu in indication bar */
+/* Indication bar dropdown */
 header .indication-dropdown {
   position: relative;
 }
@@ -109,6 +108,7 @@ header .indication-dropdown-menu a:hover {
   }
 }
 
+/* HCP Header: Teal ribbon bar with utility links */
 header nav {
   box-sizing: border-box;
   display: grid;
@@ -246,13 +246,6 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-}
-
 /* brand */
 header .nav-brand {
   grid-area: brand;
@@ -267,7 +260,7 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* sections */
+/* HCP nav sections - hidden by default, shown in mobile menu */
 header nav .nav-sections {
   grid-area: sections;
   flex: 1 1 auto;
@@ -284,11 +277,17 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-m);
 }
 
 header nav .nav-sections ul > li {
   font-weight: 700;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+header nav .nav-sections ul > li:last-child {
+  border-bottom: none;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -299,119 +298,101 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
+/* HCP: Keep nav sections hidden on desktop too - it's a MENU-only nav */
 @media (width >= 900px) {
   header nav .nav-sections {
-    display: block;
+    display: none;
+    visibility: hidden;
+  }
+
+  /* Show hamburger on desktop for HCP (MENU button) */
+  header nav .nav-hamburger {
+    display: flex;
     visibility: visible;
-    white-space: nowrap;
+    order: 3;
   }
 
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
-  }
-
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
+  header nav .nav-hamburger button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: auto;
+    padding: 8px 16px;
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: var(--body-font-size-s);
     cursor: pointer;
   }
 
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
+  header nav .nav-hamburger button::after {
+    content: 'MENU';
+    font-family: var(--body-font-family);
+    font-weight: 700;
+  }
+
+  header nav[aria-expanded='false'] .nav-hamburger-icon,
+  header nav[aria-expanded='false'] .nav-hamburger-icon::before,
+  header nav[aria-expanded='false'] .nav-hamburger-icon::after {
+    background: var(--color-white);
+  }
+
+  header nav[aria-expanded='true'] .nav-sections {
+    display: block;
+    visibility: visible;
     position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid var(--color-teal);
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
+    right: 32px;
+    top: 100%;
+    width: 300px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    padding: 16px;
+    z-index: 20;
   }
+}
 
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
-  }
+/* tools - HCP utility links in the ribbon */
+header nav .nav-tools {
+  grid-area: tools;
+  display: none;
+}
 
-  header nav .nav-sections ul {
+@media (width >= 900px) {
+  header nav .nav-tools {
     display: flex;
-    gap: 20px;
+    gap: 16px;
+    align-items: center;
+    order: 2;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  header nav .nav-tools p {
     margin: 0;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
+  header nav .nav-tools a:any-link {
+    font-size: var(--body-font-size-xs);
+    font-weight: 700;
+    color: var(--color-teal);
+    text-decoration: none;
+    white-space: nowrap;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
+  /* Style Check Coverage and Infusion Locator as pill buttons */
+  header nav .nav-tools p:nth-child(n+4) a:any-link {
+    padding: 6px 16px;
+    border: 1px solid var(--accent-color);
+    border-radius: 100px;
+    color: var(--accent-color);
+    font-size: var(--body-font-size-xs);
+    transition: all 0.2s ease-in-out;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
-    position: absolute;
-    left: -24px;
-    width: 220px;
-    top: 150%;
-    padding: 24px 32px 32px;
-    background-color: var(--color-white);
-    border-radius: 10px;
-    box-shadow: var(--shadow-dropdown);
-    white-space: initial;
+  header nav .nav-tools p:nth-child(n+4) a:any-link:hover {
+    background-color: var(--accent-color);
+    color: var(--color-white);
   }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--color-white);
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link {
-    font-weight: 400;
-    font-size: var(--body-font-size-s);
-  }
-}
-
-/* tools - utility links */
-header nav .nav-tools {
-  grid-area: tools;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-header nav .nav-tools p {
-  margin: 0;
-}
-
-header nav .nav-tools a:any-link {
-  font-size: var(--body-font-size-xs);
-  font-weight: 700;
-  color: var(--color-teal);
-  text-decoration: none;
-  padding: 6px 16px;
-  border: 1px solid var(--color-teal);
-  border-radius: 100px;
-  white-space: nowrap;
-  transition: all 0.2s ease-in-out;
-}
-
-header nav .nav-tools a:any-link:hover {
-  background-color: var(--color-teal);
-  color: var(--color-white);
 }
