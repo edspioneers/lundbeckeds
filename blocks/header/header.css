@@ -398,22 +398,33 @@ header nav .nav-tools {
     margin: 0;
   }
 
-  /* Prescribing Info and Request a rep - text links */
-  header nav .nav-tools p:nth-child(-n+2) a:any-link {
+  /* Request a rep - text link (2nd item, after PI dropdown) */
+  header nav .nav-tools p:nth-child(2) a:any-link {
     font-size: 16px;
     font-weight: 700;
     color: var(--color-teal);
     text-decoration: none;
     white-space: nowrap;
+    background: none;
+    border: none;
+    padding: 0;
+    text-transform: none;
+    letter-spacing: 0;
   }
 
-  /* CHECK COVERAGE and INFUSION LOCATOR - outline buttons */
+  header nav .nav-tools p:nth-child(2) a:any-link:hover {
+    color: var(--color-teal-light);
+    background: none;
+  }
+
+  /* CHECK COVERAGE and INFUSION LOCATOR - dark teal filled buttons */
   header nav .nav-tools p:nth-child(n+3) a:any-link {
     display: inline-block;
     padding: 10px 24px;
     border: 2px solid var(--color-teal);
     border-radius: 100px;
-    color: var(--color-teal);
+    background-color: var(--color-teal);
+    color: var(--color-white);
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
@@ -424,7 +435,91 @@ header nav .nav-tools {
   }
 
   header nav .nav-tools p:nth-child(n+3) a:any-link:hover {
-    background-color: var(--color-teal);
+    background-color: var(--color-teal-dark);
+    border-color: var(--color-teal-dark);
     color: var(--color-white);
+  }
+
+  /* Prescribing Information dropdown in tools */
+  header nav .nav-tools .pi-dropdown {
+    position: relative;
+  }
+
+  header nav .nav-tools .pi-dropdown-toggle {
+    background: none;
+    border: none;
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-teal);
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  header nav .nav-tools .pi-dropdown-toggle:hover {
+    color: var(--color-teal-light);
+  }
+
+  header nav .nav-tools .pi-chevron {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-teal);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  header nav .nav-tools .pi-chevron::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+    border: solid var(--color-teal);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  header nav .nav-tools .pi-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 15px -5px rgb(0 0 0 / 40%);
+    z-index: 10;
+    min-width: 220px;
+    padding: 12px 0;
+  }
+
+  header nav .nav-tools .pi-dropdown.open .pi-dropdown-menu {
+    display: block;
+  }
+
+  header nav .nav-tools .pi-dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    color: var(--color-teal);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    letter-spacing: 0;
+  }
+
+  header nav .nav-tools .pi-dropdown-menu a:hover {
+    background-color: var(--light-color);
+    color: var(--color-teal-dark);
   }
 }

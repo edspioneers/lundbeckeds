@@ -225,10 +225,35 @@ export default async function decorate(block) {
       toolLinks.forEach((p, i) => { if (i >= 3) p.remove(); });
     }
   } else {
+    // HCP site indication bar
     indicationBar.innerHTML = `<span class="indication-text">VYEPTI is indicated for the preventive treatment of migraine in adults.</span>
       <div class="indication-links">
         <a class="indication-link" href="https://www.vyepti.com">View patient site</a>
       </div>`;
+
+    // Convert "Prescribing Information" text link into a dropdown in the tools section
+    const navTools = nav.querySelector('.nav-tools');
+    if (navTools) {
+      const piBase = 'https://www.lundbeck.com/content/dam/lundbeck-com/americas/united-states/products/neurology';
+      const firstTool = navTools.querySelector('p:first-child');
+      if (firstTool) {
+        const piDropdown = document.createElement('div');
+        piDropdown.className = 'pi-dropdown';
+        piDropdown.innerHTML = `<button class="pi-dropdown-toggle" type="button">Prescribing Information <span class="pi-chevron"></span></button>
+          <div class="pi-dropdown-menu">
+            <a href="${piBase}/vyepti_pi_us_en.pdf">Prescribing Information</a>
+            <a href="${piBase}/vyepti_ppi_us_en.pdf">Patient Information</a>
+            <a href="${piBase}/vyepti_pi_us_es.pdf">Información de Prescripción</a>
+            <a href="${piBase}/vyepti_ppi_us_es.pdf">Información del Paciente</a>
+          </div>`;
+        piDropdown.querySelector('button').addEventListener('click', (e) => {
+          e.stopPropagation();
+          piDropdown.classList.toggle('open');
+        });
+        document.addEventListener('click', () => piDropdown.classList.remove('open'));
+        firstTool.replaceWith(piDropdown);
+      }
+    }
   }
 
   navWrapper.append(indicationBar);
